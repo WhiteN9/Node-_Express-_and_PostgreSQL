@@ -12,13 +12,14 @@ async function commentExists(req, res, next) {
 }
 
 async function list(req, res, next) {
-  // your solution here
-  res.json({ data: "" });
+  res.json({ data: await service.list() });
 }
 
 async function listCommenterCount(req, res, next) {
-  // your solution here
-  res.json({ data: "" });
+  const data = await service.listCommenterCount();
+  data.forEach((element) => element.count = parseFloat(element.count));
+  // console.log(data);
+  res.json({ data: data });
 }
 
 async function read(req, res, next) {
