@@ -13,18 +13,16 @@ async function postExists(req, res, next) {
 }
 
 async function create(req, res) {
-  // your solution here
-  res.json({ data: "" });
+  res.status(201).json({ data: await service.create(req.body.data) });
 }
 
 async function update(req, res) {
-  // your solution here
-  res.json({ data: "" });
+  res.json({ data: await service.update(req.body.data) });
 }
 
 async function destroy(req, res) {
-  // your solution here
-  res.json({ data: "" });
+  // console.log(res.locals.post);
+  res.status(204).json({ data: await service.delete(res.locals.post.post_id) });
 }
 
 module.exports = {

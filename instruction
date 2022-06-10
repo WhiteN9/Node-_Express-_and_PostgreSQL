@@ -1,3 +1,2 @@
-For the /comments/commenter-count path, the API should return a count of comments from each commenter, grouped by user_email, aliased to commenter_email, ordered by commenter_email in your result. In src/comments/comments.service.js, complete listCommenterCount() to perform a join between comments and users tables here to get the needed columns.
-
-Then, in src/comments/comments.controller.js, modify the listCommenterCount() function to call the service method accordingly and return the data.
+src/comments/comments.service.js, 
+complete the read() function to retrieve a comment by ID, including the following columns in your result: comment_id, comment, user_email aliased as commenter_email, and post_body aliased as commented_post. You will need to perform a join between the comments, users, and posts tables here. The read() method in the controller is already completed for you.
