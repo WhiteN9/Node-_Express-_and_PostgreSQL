@@ -3,6 +3,7 @@ const { PORT = 5000 } = process.env;
 const app = require("./app");
 const knex = require("./db/connection");
 
+console.log(process.env.DATABASE_URL)
 const listener = () => console.log(`Listening on Port ${PORT}!`);
 
 knex.migrate
